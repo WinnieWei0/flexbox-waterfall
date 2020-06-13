@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            text-decoration: none;
+            list-style: none;
+            width: 200px;
+            padding: 10px;
+            background-color: beige;
+            margin-right: 10px;
+            box-sizing: border-box;
+        }
+
+        li:nth-child(3n) {
+            margin-right: 0;
+        }
+
+        li:nth-child(n+3) {
+            margin-top: 10px;
+        }
+
+        .box {
+            width: 620px;
+            border-radius: 8px;
+            background-color: antiquewhite;
+            border: 1px solid #ccc;
+            margin: 50px auto;
+            padding: 10px;
+        }
+
+        /******************** 以下是代码核心 *********************/
+
+        /* 列表父元素ul设置flex，子元素的align-items默认为stretch，即跟最高的元素等高 */
+        .box ul {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        /* li设置纵向排列，子元素压缩不换行 */
+        .box ul li {
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* 图片区域占余下的所有高度，并水平垂直居中 */
+        .box ul li .img {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+
+        .box ul li img {
+            width: 100%;
+            /* 建议设置最小宽度，以防图片加载失败样式错乱 */
+            min-height: 180px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <ul class="parent">
+            <li>
+                <div class="img">
+                    <img src="./image/cat1.jpg" alt="">
+                </div>
+                <p class="price">like price</p>
+            </li>
+            <li>
+                <div class="img">
+                    <img src="./image/cat2.jpeg" alt="">
+                </div>
+                <p class="price">like price</p>
+            </li>
+            <li>
+                <div class="img">
+                    <img src="./image/cat3.jpeg" alt="">
+                </div>
+                <p class="price">like price</p>
+            </li>
+            <li>
+                <div class="img">
+                    <img src="./image/cat5.jpg" alt="">
+                </div>
+                <p class="price">like price</p>
+            </li>
+            <li>
+                <div class="img">
+                    <img src="./image/cat3.jpeg" alt="">
+                </div>
+                <p class="price">like price</p>
+            </li>
+            <li>
+                <div class="img">
+                    <img src="./image/dog2.jpg" alt="">
+                </div>
+                <p class="price">like price</p>
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>
